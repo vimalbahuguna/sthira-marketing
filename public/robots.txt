@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sthira.sosservices.online/sitemap-index.xml

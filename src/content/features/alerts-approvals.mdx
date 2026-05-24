@@ -1,0 +1,22 @@
+---
+name: Alerts & Approvals
+tagline: Push notifications that ask, not just announce
+description: Every money-moving action gets a push notification with an Approve / Reject pair. No silent automation, no buried-in-the-app surprises.
+accent: '#0ea5e9'
+category: visibility
+order: 7
+bullets:
+  - Every order gets a one-screen explanation + Approve / Reject
+  - SIP failure alerts surface the reason, not just the failure
+  - Drift threshold breach gets a push within minutes, not at end-of-day
+  - Inactive-user nudges are bounded (no spammy growth loop)
+  - All alerts archived in-app with timestamps for the audit trail
+---
+
+## What it does
+
+Push notifications are usually a growth-hacking tool. Sthira uses them as the consent surface. Every action the platform proposes — a rebalance, a SIP retry, an order — arrives as a push with the full context and an Approve / Reject pair right there.
+
+The notifications are calm. There's no "your portfolio is bleeding!" screaming. The phrasing is closer to: "Your equity allocation has drifted to 76% (target 70%). Proposed rebalance: sell ₹12,000 of Equity Index Fund, buy ₹12,000 of Short-Term Debt Fund. Within your pre-authorized bounds. [Approve] [Reject]."
+
+If you reject, Sthira logs the rejection and doesn't propose the same action again for a configurable cooldown.

@@ -1,0 +1,88 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const {
+  title = 'Sthira — Investing on autopilot, without the autopilot deciding',
+  description = 'Sthira is a SEBI-conscious retail investment platform by SOS Markets. Goal-based SIPs, pre-authorized drift rebalancing, and an LLM that explains — never trades.',
+  canonical: canonicalOverride,
+  ogImage = '/og.svg',
+  ogType = 'website',
+  jsonLd,
+} = Astro.props;
+
+const canonical = canonicalOverride ?? new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageAbs = new URL(ogImage, Astro.site).toString();
+
+// SoftwareApplication JSON-LD is always present for Sthira.
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Sthira',
+  alternateName: 'Sthira by SOS Markets',
+  description:
+    'SEBI-conscious retail investment platform: goal-based SIPs and pre-authorized drift rebalancing. The LLM explains; it does not trade.',
+  url: 'https://sthira.sosservices.online',
+  applicationCategory: 'FinanceApplication',
+  applicationSubCategory: 'Retail Investing',
+  operatingSystem: 'Android, Web',
+  provider: {
+    '@type': 'Organization',
+    name: 'SOS Services',
+    url: 'https://sosservices.online',
+  },
+};
+
+const schemas = [productSchema, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    {/* Open Graph */}
+    <meta property="og:site_name" content="Sthira" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    {/* Twitter card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbs} />
+
+    <meta name="generator" content={Astro.generator} />
+
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </head>
+  <body class="min-h-screen bg-white text-slate-900 antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

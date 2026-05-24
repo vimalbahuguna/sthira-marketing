@@ -1,0 +1,22 @@
+---
+name: Goal-based SIPs
+tagline: SIPs that survive a short balance and a missed Monday
+description: Set the goal, set the amount, set the day. Sthira handles the rest — including the boring failure modes that quietly break most SIP setups.
+accent: '#047857'
+category: planning
+order: 1
+bullets:
+  - Define SIPs against goals ("house down payment 2031"), not just funds
+  - Auto-debit with skip-on-insufficient-balance semantics
+  - 'Calendar-aware — never schedules on a holiday or non-settlement day'
+  - Resumes the next debit cycle automatically, no manual fix needed
+  - Surfaces progress against the goal in plain rupees, not %
+---
+
+## What it does
+
+A SIP is meant to be unremarkable. You decide the amount, you decide the date, and the system handles the recurrence. Real-world SIPs break for boring reasons — short balance, bank holidays, weekend cutoffs, e-mandate expiry. Sthira's scheduler is built for those failure modes specifically.
+
+Every SIP belongs to a **goal**: a house, retirement, a sabbatical. The amount, the horizon, and the asset mix are all framed against the goal. When you open the app, you don't see "your SIP into HDFC Index Fund returned 12.4% YoY." You see "you are ₹4.2L into a ₹35L goal due in 2031, currently on track."
+
+If a debit fails, Sthira tries the next valid day, tells you why, and continues. No silent skips. No "we tried once, you missed it, sorry."

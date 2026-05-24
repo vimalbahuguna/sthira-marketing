@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import MetricsBar from '../components/MetricsBar.astro';
+import { getCollection } from 'astro:content';
+
+const features = (await getCollection('features')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Layout>
+  {/* Hero */}
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-50 via-white to-white"></div>
+    <div class="mx-auto max-w-6xl px-6 pt-20 pb-24 text-center sm:pt-28 sm:pb-32">
+      <p class="text-sm font-medium uppercase tracking-wider text-emerald-700">
+        A Product by SOS Markets
+      </p>
+      <h1 class="mx-auto mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
+        Investing on autopilot. Without the autopilot deciding.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
+        Sthira runs your SIPs, watches your portfolio for drift, and asks before it
+        rebalances. The LLM explains what's happening. It never places a trade for you.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="/contact"
+          class="rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-emerald-600"
+        >
+          Join the waitlist
+        </a>
+        <a
+          href="#features"
+          class="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-900 hover:border-slate-300"
+        >
+          How it works →
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-slate-500">
+        Goal-based SIPs · Drift rebalancing · SEBI-conscious · No LLM trading
+      </p>
+    </div>
+  </section>
+
+  {/* Investor-trust metrics */}
+  <MetricsBar />
+
+  {/* Features grid */}
+  <section id="features" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mb-10 flex items-end justify-between">
+      <div>
+        <h2 class="text-3xl font-semibold tracking-tight">How Sthira works</h2>
+        <p class="mt-2 text-slate-600">
+          Eight pieces that turn "I should invest" into "I am invested, and I know why."
+        </p>
+      </div>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => <FeatureCard feature={feature} />)}
+    </div>
+  </section>
+
+  {/* Why */}
+  <section class="border-t border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">Why Sthira instead of another trading app</h2>
+      <dl class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <dt class="font-medium">Investing, not trading</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            Sthira is built for the long game. No leverage, no F&O nudges, no
+            "watchlist gone red" doom scrolling. SIPs and rebalancing — that's it.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium">The LLM is a teacher, not a trader</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            Ask why your portfolio drifted. Ask what an expense ratio is. Ask how the
+            rebalancing math works. The LLM answers. It does not click "buy."
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium">Pre-authorized, not surprise-charged</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            Every rebalance is bounded by limits you set up front. You approve the plan
+            once. The plan respects it forever. No upsells, no nudges to "boost return."
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium">Your broker, not ours</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            Sthira connects to your existing broker account (Groww first, more coming).
+            We don't custody your money. We orchestrate it.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium">Audit trail by default</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            Every recommendation, every approval, every order — recorded with its
+            reasoning. Your CA, your spouse, and your future self can all reconstruct
+            what happened and why.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium">Built for the layman</dt>
+          <dd class="mt-2 text-sm text-slate-600">
+            No "alpha." No "beta." No "max drawdown." The screens say "this is the
+            goal," "this is what's happening," "this is what changed." That's it.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  {/* Pricing teaser */}
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="rounded-2xl border border-slate-200 bg-white p-10 text-center">
+      <p class="text-sm font-medium uppercase tracking-wider text-slate-500">Pricing</p>
+      <h2 class="mt-3 text-3xl font-semibold tracking-tight">Flat fee. No commissions. Soon.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-slate-600">
+        Sthira is in closed pilot, finishing SEBI advisor onboarding. Pricing publishes
+        here once the regulator path is closed. For early access, join the waitlist.
+      </p>
+      <a
+        href="/contact"
+        class="mt-6 inline-block rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
+      >
+        Join the waitlist
+      </a>
+    </div>
+  </section>
+
+  {/* From the studio rail — cross-link to parent's retail/markets engineering content */}
+  <section class="border-t border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="mb-8 flex items-end justify-between">
+        <div>
+          <p class="text-sm font-medium uppercase tracking-wider text-emerald-700">From the studio</p>
+          <h2 class="mt-2 text-2xl font-semibold tracking-tight">How we build Sthira</h2>
+        </div>
+        <a
+          href="https://sosservices.online/engineering/"
+          class="hidden text-sm text-slate-600 hover:text-slate-900 sm:block"
+          target="_blank"
+          rel="noreferrer"
+        >
+          All engineering posts ↗
+        </a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <a
+          href="https://sosservices.online/engineering/why-we-dont-let-the-llm-trade-for-you/"
+          class="block rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-slate-300 hover:shadow-md"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p class="text-xs font-medium uppercase tracking-wider text-emerald-700">Retail</p>
+          <h3 class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
+            Why we don't let the LLM trade for you
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            The full argument: fiduciary duty, SEBI lines, layman audience, what
+            automation actually buys you when the model isn't pulling the trigger.
+          </p>
+          <p class="mt-3 text-sm font-medium text-slate-900">Read on sosservices.online →</p>
+        </a>
+        <a
+          href="https://sosservices.online/engineering/multi-tenant-rls-at-studio-scale/"
+          class="block rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-slate-300 hover:shadow-md"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Engineering</p>
+          <h3 class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
+            Multi-tenant RLS at studio scale
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            How a single Postgres holds Sthira, Logic Nexus, and Aviation AI Pro without
+            data ever bleeding across products.
+          </p>
+          <p class="mt-3 text-sm font-medium text-slate-900">Read on sosservices.online →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,23 @@
+---
+name: LLM Explainer
+tagline: Ask anything. Get an answer. Get no trades.
+description: A read-only LLM that explains your portfolio, the math, and the market — without ever placing an order on your behalf.
+accent: '#22c55e'
+category: intelligence
+order: 8
+bullets:
+  - Ask why your portfolio drifted, what an expense ratio is, anything
+  - The model has read-only access to your portfolio state
+  - It cannot, by architecture, originate an order
+  - Sources cited where applicable — no hallucinated numbers
+  - Conversations stored privately; never used to train any model
+---
+
+## What it does
+
+The LLM in Sthira is a teacher. It can read your portfolio state, look at your goals, walk you through the math behind a rebalancing proposal, or explain what a TER is. What it cannot do — by architecture, not by policy promise — is place an order. The order path has no LLM in it.
+
+This is a deliberate design choice, and we've written about it in some detail: see{' '}
+<a href="https://sosservices.online/engineering/why-we-dont-let-the-llm-trade-for-you/" target="_blank" rel="noreferrer">Why we don't let the LLM trade for you</a> on the studio site. Short version: a layman investor cannot give informed consent to a black-box decision-maker that operates faster than they can read. So we don't ask them to.
+
+The LLM is genuinely useful for everything *around* the trade: explaining, teaching, surfacing relevant context, and turning jargon into English. Just not for pulling the trigger.

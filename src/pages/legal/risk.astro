@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const updated = '2026-05-24';
+---
+
+<Layout title="Risk Disclosure — Sthira" description="Investment risk disclosures for Sthira users.">
+  <article class="mx-auto max-w-2xl px-6 py-20">
+    <p class="text-sm font-medium uppercase tracking-wider text-slate-500">Legal</p>
+    <h1 class="mt-3 text-4xl font-semibold tracking-tight">Risk Disclosure</h1>
+    <p class="mt-2 text-sm text-slate-500">Last updated: {updated}</p>
+
+    <div class="prose prose-slate mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-h2:mt-10 prose-h2:text-2xl">
+      <p>
+        Investments in securities are subject to market risks. Read all related documents
+        carefully before investing. Past performance is not indicative of future returns.
+      </p>
+
+      <h2>What Sthira is not</h2>
+      <ul>
+        <li>Not a deposit. Returns are not guaranteed.</li>
+        <li>Not insured by the RBI, DICGC, or any government scheme.</li>
+        <li>Not a substitute for personalized financial advice. We follow a regulated
+            advisory framework, but every investor's circumstances are different.</li>
+        <li>Not a vehicle for speculative or short-term trading. Sthira is built for
+            long-horizon, goal-based investing.</li>
+      </ul>
+
+      <h2>Specific risks</h2>
+      <ul>
+        <li><strong>Market risk</strong> — equity and debt instruments fluctuate. Drift rebalancing reduces concentration risk but does not eliminate market risk.</li>
+        <li><strong>Liquidity risk</strong> — certain instruments may not be redeemable instantly. Sthira will surface this before any allocation.</li>
+        <li><strong>Operational risk</strong> — broker outages, payment failures, KYC mismatches. We mitigate with retries and clear surfacing, but you should be prepared for occasional delays.</li>
+        <li><strong>Regulatory risk</strong> — SEBI rules evolve. Sthira's behavior may change to remain compliant.</li>
+      </ul>
+
+      <h2>Pre-authorized actions</h2>
+      <p>
+        When you sign up, Sthira will ask you to pre-authorize a bounded set of actions
+        (e.g., "rebalance when allocation drifts more than 5%"). These are <em>bounded</em>:
+        outside those limits, Sthira will not act without re-consent. Read every consent
+        screen carefully before approving.
+      </p>
+
+      <p class="text-sm text-slate-500">
+        Questions? <a href="/contact">Contact us</a>.
+      </p>
+    </div>
+  </article>
+</Layout>

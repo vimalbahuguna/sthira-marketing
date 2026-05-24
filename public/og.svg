@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sthira by SOS Markets social card">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="56" height="56" rx="12" fill="#047857"/>
+    <path d="M14 36 L24 22 L32 30 L42 14 L42 42 L14 42 Z" fill="#a7f3d0"/>
+    <text x="80" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#047857" letter-spacing="2">A PRODUCT BY SOS MARKETS</text>
+    <text x="80" y="50" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="#064e3b">Sthira</text>
+  </g>
+  <text x="80" y="290" font-family="system-ui, sans-serif" font-size="54" font-weight="700" fill="#064e3b">Investing on autopilot.</text>
+  <text x="80" y="350" font-family="system-ui, sans-serif" font-size="54" font-weight="700" fill="#064e3b">Without the autopilot</text>
+  <text x="80" y="410" font-family="system-ui, sans-serif" font-size="54" font-weight="700" fill="#064e3b">deciding.</text>
+  <g transform="translate(80, 480)">
+    <rect x="0" y="0" width="160" height="36" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+    <text x="14" y="23" font-family="system-ui, sans-serif" font-size="14" fill="#047857">Goal-based SIPs</text>
+    <rect x="180" y="0" width="200" height="36" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+    <text x="194" y="23" font-family="system-ui, sans-serif" font-size="14" fill="#047857">Drift rebalancing</text>
+    <rect x="400" y="0" width="200" height="36" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+    <text x="414" y="23" font-family="system-ui, sans-serif" font-size="14" fill="#047857">SEBI-conscious</text>
+    <rect x="620" y="0" width="180" height="36" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+    <text x="634" y="23" font-family="system-ui, sans-serif" font-size="14" fill="#047857">No LLM trading</text>
+  </g>
+  <text x="80" y="585" font-family="system-ui, sans-serif" font-size="16" fill="#64748b">sthira.sosservices.online</text>
+</svg>

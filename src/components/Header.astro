@@ -1,0 +1,34 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/#features', label: 'How it works' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Join waitlist' },
+];
+const current = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="/" class="flex items-center gap-2 font-semibold tracking-tight">
+      <span class="inline-block h-6 w-6 rounded bg-emerald-700"></span>
+      <span>Sthira</span>
+      <span class="hidden text-xs font-normal text-slate-500 sm:inline">by SOS Markets</span>
+    </a>
+    <nav class="flex items-center gap-6 text-sm">
+      {
+        links.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'transition-colors hover:text-slate-900',
+              current === href ? 'text-slate-900' : 'text-slate-600',
+            ]}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

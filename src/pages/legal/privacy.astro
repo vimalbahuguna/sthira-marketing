@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const updated = '2026-05-24';
+---
+
+<Layout title="Privacy Policy — Sthira" description="How Sthira handles your personal and financial data.">
+  <article class="mx-auto max-w-2xl px-6 py-20">
+    <p class="text-sm font-medium uppercase tracking-wider text-slate-500">Legal</p>
+    <h1 class="mt-3 text-4xl font-semibold tracking-tight">Privacy Policy</h1>
+    <p class="mt-2 text-sm text-slate-500">Last updated: {updated}</p>
+
+    <div class="prose prose-slate mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-h2:mt-10 prose-h2:text-2xl">
+      <p>
+        This is a placeholder policy capturing the spirit of how Sthira handles personal
+        and financial data. A full SEBI-compliant, legal-reviewed policy will replace this
+        before commercial launch.
+      </p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li><strong>Waitlist submissions</strong> — name, email, how-you-invest answer.</li>
+        <li><strong>KYC data</strong> (in app, post-launch) — as required by SEBI/PMLA. Stored with India-resident infrastructure.</li>
+        <li><strong>Broker tokens</strong> (in app, post-launch) — short-lived OAuth tokens, encrypted at rest, never sold or shared.</li>
+        <li><strong>Portfolio + transaction data</strong> (in app, post-launch) — to run drift detection and explain your portfolio back to you.</li>
+      </ul>
+
+      <h2>What we don't do</h2>
+      <ul>
+        <li>No ad networks. No third-party trackers on the marketing site.</li>
+        <li>No selling, sharing, or aggregating of personal or financial data.</li>
+        <li>No reading or storing your bank account contents.</li>
+        <li>No LLM training on your data.</li>
+      </ul>
+
+      <h2>Your rights</h2>
+      <p>
+        You can request access to or deletion of any data we hold by emailing{' '}
+        <a href="mailto:privacy@sosservices.online">privacy@sosservices.online</a>. We will
+        respond within 7 days. KYC records retained per SEBI/PMLA minimums even after
+        account closure, as required.
+      </p>
+
+      <h2>Where data lives</h2>
+      <p>
+        KYC and financial data is processed and stored on India-resident infrastructure.
+        The marketing site is hosted on infrastructure in India and Europe.
+      </p>
+
+      <p class="text-sm text-slate-500">
+        Questions? <a href="/contact">Contact us</a>.
+      </p>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,22 @@
+---
+name: Broker Connect
+tagline: Your broker, your money — Sthira just orchestrates
+description: Sthira connects to your existing brokerage account via official APIs. We never custody your funds. You can disconnect at any time.
+accent: '#0d9488'
+category: execution
+order: 3
+bullets:
+  - Groww integration live; more brokers in the pipeline
+  - Daily OAuth approval pattern is surfaced clearly — no silent token expiry
+  - Tokens stored encrypted at rest, scoped to the minimum required permissions
+  - No custody — your money stays in your broker account
+  - One-tap disconnect; Sthira can no longer act on revocation
+---
+
+## What it does
+
+Sthira is not a broker. We don't hold your money, we don't move it between accounts, and we never see your bank credentials. What we do is connect to your existing broker via their official API, and from there orchestrate the SIPs and rebalancing you've already approved.
+
+Today that means **Groww**. The Groww Trade API requires you to tap Approve on their site each trading day — Sthira surfaces this clearly, sends a reminder when the approval lapses, and pauses execution rather than silently missing it.
+
+More brokers (Zerodha, Upstox, ICICI) are in the integration queue. Architecture-wise, each broker is a connector module — adding a new broker means adding configuration, not changing the platform.

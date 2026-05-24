@@ -1,0 +1,27 @@
+---
+const metrics = [
+  { value: '2', label: 'Automation tiers', sub: 'SIPs + drift rebalancing' },
+  { value: '0', label: 'LLM-initiated trades', sub: 'by design, not by accident' },
+  { value: '100%', label: 'Human approval', sub: 'every money-moving action' },
+  { value: '8', label: 'Investor safeguards', sub: 'KYC → suitability → consent → audit' },
+];
+---
+
+<section class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <p class="text-sm font-medium uppercase tracking-wider text-emerald-700">
+      Built like a fiduciary, not a casino
+    </p>
+    <dl class="mt-6 grid grid-cols-2 gap-8 sm:grid-cols-4">
+      {
+        metrics.map((m) => (
+          <div>
+            <dt class="text-3xl font-semibold tracking-tight text-slate-900">{m.value}</dt>
+            <dd class="mt-1 text-sm font-medium text-slate-900">{m.label}</dd>
+            <dd class="mt-0.5 text-xs text-slate-500">{m.sub}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
