@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import OutcomesBar from '../components/OutcomesBar.astro';
 import TrustRow from '../components/TrustRow.astro';
+import FadeUpOnScroll from '../components/FadeUpOnScroll.astro';
 import { getCollection } from 'astro:content';
 
 const features = (await getCollection('features')).sort(
@@ -71,7 +72,7 @@ const features = (await getCollection('features')).sort(
 
   {/* Why */}
   <section class="border-t border-slate-200 bg-slate-50">
-    <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="motion-rise mx-auto max-w-6xl px-6 py-20">
       <h2 class="text-3xl font-semibold tracking-tight">Why Sthira instead of another trading app</h2>
       <dl class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div>
@@ -141,7 +142,7 @@ const features = (await getCollection('features')).sort(
 
   {/* From the studio rail — cross-link to parent's retail/markets engineering content */}
   <section class="border-t border-slate-200 bg-slate-50">
-    <div class="mx-auto max-w-6xl px-6 py-16">
+    <div class="motion-rise mx-auto max-w-6xl px-6 py-16">
       <div class="mb-8 flex items-end justify-between">
         <div>
           <p class="text-sm font-medium uppercase tracking-wider text-emerald-700">From the studio</p>
@@ -224,4 +225,5 @@ const features = (await getCollection('features')).sort(
       </div>
     </div>
   </section>
+  <FadeUpOnScroll />
 </Layout>
