@@ -136,22 +136,81 @@ const features = (await getCollection('features')).sort(
     </div>
   </section>
 
-  {/* Pricing teaser */}
+  {/* Pricing — pilot tiers */}
   <section class="mx-auto max-w-6xl px-6 py-20">
-    <div class="rounded-2xl border border-slate-200 bg-white p-10 text-center">
-      <p class="text-sm font-medium uppercase tracking-wider text-slate-500">Pricing</p>
-      <h2 class="mt-3 text-3xl font-semibold tracking-tight">Flat fee. No commissions. Soon.</h2>
-      <p class="mx-auto mt-4 max-w-xl text-slate-600">
-        Sthira is in closed pilot, finishing SEBI advisor onboarding. Pricing publishes
-        here once the regulator path is closed. For early access, join the waitlist.
+    <div class="motion-rise mb-10 text-center">
+      <p class="text-xs font-medium uppercase tracking-[0.32em] text-emerald-700">Pricing</p>
+      <h2 class="mt-3 text-3xl font-semibold tracking-tight">Flat fee. No commissions.</h2>
+      <p class="mx-auto mt-3 max-w-xl text-slate-600">
+        Indicative pilot pricing. Final tiers publish at GA — early users lock in
+        Founding Member pricing.
       </p>
-      <a
-        href="/contact"
-        class="mt-6 inline-block rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
-      >
-        Join the waitlist
-      </a>
     </div>
+
+    <div class="motion-rise grid gap-6 lg:grid-cols-3">
+      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8">
+        <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Free</p>
+        <p class="mt-3 flex items-baseline gap-1">
+          <span class="text-4xl font-bold tracking-tight">₹0</span>
+          <span class="text-sm text-slate-500">forever</span>
+        </p>
+        <p class="mt-2 text-sm text-slate-600">Get a SIP going + see your drift. The honest starting point.</p>
+        <ul class="mt-6 flex-1 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>1 portfolio</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Goal-based SIPs from ₹100/month</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Drift rebalancing (manual approval)</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Basic LLM explainer</span></li>
+        </ul>
+        <a href="/contact?tier=free" class="mt-6 rounded-lg border border-slate-200 px-4 py-2 text-center text-sm font-medium text-slate-900 hover:border-slate-300">
+          Open free account
+        </a>
+      </div>
+
+      <div class="relative flex flex-col rounded-2xl border-2 border-emerald-500 bg-white p-8 shadow-lg">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
+          Most popular
+        </span>
+        <p class="text-xs font-medium uppercase tracking-wider text-emerald-700">Pro</p>
+        <p class="mt-3 flex items-baseline gap-1">
+          <span class="text-4xl font-bold tracking-tight">₹499</span>
+          <span class="text-sm text-slate-500">/ month</span>
+        </p>
+        <p class="mt-2 text-sm text-slate-600">For investors who want the LLM to actually be useful.</p>
+        <ul class="mt-6 flex-1 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Up to 5 portfolios</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Everything in Free</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Advanced LLM (priority model, longer context)</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Pre-authorised rebalancing (Tier 2)</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Audit-trail exports for your CA</span></li>
+        </ul>
+        <a href="/contact?tier=pro" class="mt-6 rounded-lg bg-emerald-600 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-emerald-700">
+          Start Pro pilot
+        </a>
+      </div>
+
+      <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8">
+        <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Family</p>
+        <p class="mt-3 flex items-baseline gap-1">
+          <span class="text-4xl font-bold tracking-tight">₹1,499</span>
+          <span class="text-sm text-slate-500">/ month</span>
+        </p>
+        <p class="mt-2 text-sm text-slate-600">One subscription for the whole household's investing.</p>
+        <ul class="mt-6 flex-1 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Up to 10 portfolios across 4 members</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Joint household-goals view</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Consolidated audit bundles for joint ITR</span></li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span><span>Priority support</span></li>
+        </ul>
+        <a href="/contact?tier=family" class="mt-6 rounded-lg border border-slate-200 px-4 py-2 text-center text-sm font-medium text-slate-900 hover:border-slate-300">
+          Start Family pilot
+        </a>
+      </div>
+    </div>
+    <p class="motion-rise mt-8 text-center text-xs text-slate-500">
+      Zero commissions on every tier. Sthira never takes a cut of your trades — your
+      broker does what it does, we orchestrate. Per-trade biometric authorisation +
+      5-second SEBI disclaimer apply to all tiers.
+    </p>
   </section>
 
   {/* From the studio rail — cross-link to parent's retail/markets engineering content */}
