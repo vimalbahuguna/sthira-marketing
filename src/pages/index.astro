@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
-import MetricsBar from '../components/MetricsBar.astro';
+import OutcomesBar from '../components/OutcomesBar.astro';
+import TrustRow from '../components/TrustRow.astro';
 import { getCollection } from 'astro:content';
 
 const features = (await getCollection('features')).sort(
@@ -10,30 +11,33 @@ const features = (await getCollection('features')).sort(
 ---
 
 <Layout>
-  {/* Hero */}
-  <section class="relative isolate overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-50 via-white to-white"></div>
-    <div class="mx-auto max-w-6xl px-6 pt-20 pb-24 text-center sm:pt-28 sm:pb-32">
-      <p class="text-sm font-medium uppercase tracking-wider text-emerald-700">
-        A Product by SOS Markets
+  {/* Hero — dark, emerald accent */}
+  <section class="relative isolate overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900"></div>
+    <div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-emerald-500/20 blur-3xl" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -right-32 top-1/3 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" aria-hidden="true"></div>
+
+    <div class="relative mx-auto max-w-6xl px-6 pt-24 pb-20 text-center sm:pt-32 sm:pb-28">
+      <p class="text-xs font-medium uppercase tracking-[0.32em] text-emerald-400">
+        A product by SOS Markets · Layman retail investing
       </p>
-      <h1 class="mx-auto mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
+      <h1 class="mx-auto mt-5 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-6xl">
         Investing on autopilot. Without the autopilot deciding.
       </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
         Sthira runs your SIPs, watches your portfolio for drift, and asks before it
         rebalances. The LLM explains what's happening. It never places a trade for you.
       </p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
           href="/contact"
-          class="rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-emerald-600"
+          class="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-emerald-400"
         >
           Join the waitlist
         </a>
         <a
           href="#features"
-          class="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-900 hover:border-slate-300"
+          class="rounded-lg border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:bg-slate-900"
         >
           How it works →
         </a>
@@ -44,8 +48,11 @@ const features = (await getCollection('features')).sort(
     </div>
   </section>
 
-  {/* Investor-trust metrics */}
-  <MetricsBar />
+  {/* Trust row */}
+  <TrustRow />
+
+  {/* Outcomes — restraint on the record */}
+  <OutcomesBar />
 
   {/* Features grid */}
   <section id="features" class="mx-auto max-w-6xl px-6 py-20">
