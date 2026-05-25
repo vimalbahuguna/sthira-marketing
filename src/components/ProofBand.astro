@@ -1,0 +1,81 @@
+---
+// Sthira proof band — merges previous TrustRow + OutcomesBar into one dense
+// section. Brand stance is restraint, so every number here is a fact about
+// architecture — no Target projections. Disclaimer keeps the original
+// "the bar moves only when the architecture moves" line.
+
+const stats = [
+  {
+    value: '0',
+    label: 'LLM-initiated trades',
+    note: 'the LLM explains; humans decide',
+    kind: 'fact',
+  },
+  {
+    value: '2',
+    label: 'Automation tiers',
+    note: 'SIPs + drift rebalancing — no Tier 3',
+    kind: 'fact',
+  },
+  {
+    value: '8',
+    label: 'Investor safeguards',
+    note: 'cooling-off · biometric · audit · more',
+    kind: 'fact',
+  },
+  {
+    value: '5s',
+    label: 'Mandatory disclaimer',
+    note: 'SEBI ad-code, gated in the UI',
+    kind: 'fact',
+  },
+];
+
+const pills = [
+  'SEBI-aligned advisory · IA-Code 2026',
+  '100% human approval on Tier-2',
+  '5-second SEBI disclaimer · hard-coded',
+  '₹100 minimum SIP · low-stakes entry',
+];
+---
+
+<section class="border-y border-slate-800 bg-slate-950 text-slate-100">
+  <div class="motion-rise mx-auto max-w-6xl px-6 py-6 sm:py-8">
+    <p class="text-center text-[11px] font-medium uppercase tracking-[0.32em] text-emerald-400">
+      Restraint, on the record
+    </p>
+
+    <dl class="mt-5 grid grid-cols-2 gap-y-5 gap-x-6 text-center sm:mt-6 sm:grid-cols-4">
+      {
+        stats.map((s) => (
+          <div>
+            <dt class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {s.value}
+            </dt>
+            <dd class="mt-1 text-xs font-medium text-slate-200 sm:text-sm">
+              {s.label}
+            </dd>
+            <dd class="mt-0.5 text-[11px] text-slate-500">{s.note}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div
+      class="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 border-t border-slate-800/60 pt-5"
+    >
+      {
+        pills.map((p) => (
+          <span class="rounded-full border border-slate-700/60 bg-slate-900/40 px-3 py-1 text-[11px] font-medium text-slate-300">
+            {p}
+          </span>
+        ))
+      }
+    </div>
+
+    <p class="mt-4 text-center text-[11px] text-slate-500">
+      Every number above is a fact about how Sthira is built, not a goal. The bar
+      moves only when the architecture moves.
+    </p>
+  </div>
+</section>

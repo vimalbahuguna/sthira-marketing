@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
-import OutcomesBar from '../components/OutcomesBar.astro';
-import TrustRow from '../components/TrustRow.astro';
+import ProofBand from '../components/ProofBand.astro';
 import FadeUpOnScroll from '../components/FadeUpOnScroll.astro';
 import { getCollection } from 'astro:content';
 
@@ -62,11 +61,8 @@ const features = (await getCollection('features')).sort(
     </div>
   </section>
 
-  {/* Trust row */}
-  <TrustRow />
-
-  {/* Outcomes — restraint on the record */}
-  <OutcomesBar />
+  {/* Proof band — merged trust badges + outcome metrics + restraint disclaimer */}
+  <ProofBand />
 
   {/* Features grid */}
   <section id="features" class="mx-auto max-w-6xl px-6 py-20">
